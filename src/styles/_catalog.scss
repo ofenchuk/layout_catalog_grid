@@ -3,7 +3,7 @@ $grid-gap: 48px;
 
 .catalog {
   display: grid;
-  grid-template-columns: $card-width $card-width $card-width $card-width;
+  grid-template-columns: repeat(4, $card-width $card-width $card-width);
   column-gap: $grid-gap;
   row-gap: $grid-gap;
   justify-content: center;
@@ -29,13 +29,13 @@ $grid-gap: 48px;
 
 @media (max-width: 1023px) {
   .catalog {
-    grid-template-columns: $card-width $card-width $card-width;
+    grid-template-columns: repeat(3, $card-width $card-width $card-width);
   }
 }
 
 @media (max-width: 767px) {
   .catalog {
-    grid-template-columns: $card-width $card-width;
+    grid-template-columns: repeat(2, $card-width $card-width $card-width);
   }
 }
 
