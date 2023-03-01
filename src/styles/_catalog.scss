@@ -1,6 +1,12 @@
+$card-width: 200px;
+$grid-gap: 48px;
+
 .catalog {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: $card-width $card-width $card-width $card-width;
+  column-gap: $grid-gap;
+  row-gap: $grid-gap;
+  justify-content: center;
 
   max-width: 944px;
   margin: 0 auto;
@@ -9,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    width: $card-width;
     height: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -18,5 +24,23 @@
 
   &__card:not(:nth-child(4n)) {
     margin-right: 48px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .catalog {
+    grid-template-columns: $card-width $card-width $card-width;
+  }
+}
+
+@media (max-width: 767px) {
+  .catalog {
+    grid-template-columns: $card-width $card-width;
+  }
+}
+
+@media (max-width: 487px) {
+  .catalog {
+    grid-template-columns: $card-width;
   }
 }
